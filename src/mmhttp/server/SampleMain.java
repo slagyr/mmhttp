@@ -1,0 +1,26 @@
+package mmhttp.server;
+
+import mmhttp.protocol.Response;
+import mmhttp.protocol.Request;
+import mmhttp.protocol.SimpleResponse;
+
+public class SampleMain
+{
+  public static void main(String[] args) throws Exception
+  {
+    Server server = new Server();
+    server.port = 8002;
+    server.register("hello.*", HelloResponder.class);
+    server.start();
+  }
+
+  public static class HelloResponder implements Responder
+  {
+    public Response makeResponse(Server server, Request request) throws Exception
+    {
+      SimpleResponse response = new SimpleResponse(200);
+      response.setContent("Hello World!");
+      return response;
+    }
+  }
+}

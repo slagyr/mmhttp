@@ -1,13 +1,13 @@
-<project name="Java HTTP" default="jar" basedir=".">
+<project name="MMHTTP" default="jar" basedir=".">
   <description>
-    Java HTTP and Web server
+    MMHTTP: A simple HTTP library and Web server
   </description>
 
   <property name="src" location="src"/>
   <property name="classes" location="classes"/>
   <property name="lib" location="lib"/>
   <property name="version" value="1.0"/>
-  <property name="jarfile" value="http-${version}.jar"/>
+  <property name="jarfile" value="mmhttp-${version}.jar"/>
 
   <path id="classpath">
     <pathelement path="${classes}"/>
