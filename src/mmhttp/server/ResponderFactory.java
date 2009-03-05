@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class ResponderFactory
 {
   ArrayList<Registration> registrations = new ArrayList<Registration>();
+  public Class defaultResponder = NotFoundResponder.class;
 
   public void register(String regex, Class klass)
   {
@@ -22,7 +23,7 @@ public class ResponderFactory
       if(registration.pattern.matcher(resource).matches())
         return registration.klass;
     }
-    return NotFoundResponder.class;
+    return defaultResponder;
   }
 
   public Responder responderFor(String resource) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException

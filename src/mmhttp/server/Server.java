@@ -18,16 +18,28 @@ public class Server implements SocketServer
   public String name = "MM-HTTP";
   public int port = 8080;
   public long requestTimeout = 10000;
-  private InetAddress host;
+  public InetAddress host;
 
-  public Server() throws UnknownHostException
+  public Server()
   {
-    host = InetAddress.getByName("localhost");
+    try
+    {
+      host = InetAddress.getByName("localhost");
+    }
+    catch(UnknownHostException e)
+    {
+      //okay
+    }
   }
 
   public void register(String pattern, Class klass)
   {
     responderFactory.register(pattern, klass);
+  }
+
+  public void setDefaultResponder(Class klass)
+  {
+    responderFactory.defaultResponder = klass;
   }
 
   public boolean start() throws Exception
@@ -62,5 +74,10 @@ public class Server implements SocketServer
   public boolean isRunning()
   {
     return theService != null;
+  }
+
+  public ResponderFactory getResponderFactory()
+  {
+    return responderFactory;
   }
 }
