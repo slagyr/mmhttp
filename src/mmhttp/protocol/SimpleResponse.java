@@ -1,5 +1,6 @@
-// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
-// Released under the terms of the GNU General Public License version 2 or later.
+//- ©2009 Micah Martin.  All Rights Reserved
+//- MMHTTP and all included source files are distributed under terms of the GNU LGPL.
+
 package mmhttp.protocol;
 
 import java.nio.ByteBuffer;

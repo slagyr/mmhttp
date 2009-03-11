@@ -52,6 +52,7 @@
       <batchtest fork="no" todir="etc/test_reports">
         <fileset dir="${src}">
           <include name="**/*Test.java"/>
+          <exclude name="**/RegexTest.java"/>
         </fileset>
       </batchtest>
     </junit>
@@ -59,6 +60,14 @@
 
   <target name="init">
     <mkdir dir="${classes}"/>
+  </target>
+
+  <target name="copyrights">
+      <exec command="ruby">
+          <arg value="-rrubygems"/>
+          <arg value="-e"/>
+          <arg value="require 'mmcopyrights'; MM::Copyrights.process('src', 'java', '//-', IO.read('etc/copyright.txt'))"/>
+      </exec>
   </target>
 
 </project>

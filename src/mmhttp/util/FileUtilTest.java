@@ -1,3 +1,6 @@
+//- ©2009 Micah Martin.  All Rights Reserved
+//- MMHTTP and all included source files are distributed under terms of the GNU LGPL.
+
 package mmhttp.util;
 
 import junit.framework.TestCase;
