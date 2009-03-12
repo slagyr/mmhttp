@@ -3,8 +3,8 @@
 
 package mmhttp.server;
 
-import socketserver.SocketService;
-import socketserver.SocketServer;
+import mmsocketserver.SocketService;
+import mmsocketserver.SocketServer;
 
 import java.net.Socket;
 import java.net.InetAddress;

@@ -3,7 +3,7 @@
 
 package mmhttp.protocol;
 
-import socketserver.StreamReader;
+import mmsocketserver.StreamReader;
 
 import java.io.*;
 

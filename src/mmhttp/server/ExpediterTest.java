@@ -12,7 +12,7 @@ import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.IOException;
 
-import socketserver.MockSocket;
+import mmsocketserver.MockSocket;
 import junit.framework.TestCase;
 
 public class ExpediterTest extends TestCase

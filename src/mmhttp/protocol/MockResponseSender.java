@@ -3,7 +3,7 @@
 
 package mmhttp.protocol;
 
-import socketserver.MockSocket;
+import mmsocketserver.MockSocket;
 
 import java.net.Socket;
 
