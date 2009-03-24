@@ -7,6 +7,9 @@ import mmhttp.protocol.Response;
 import mmhttp.protocol.Request;
 import mmhttp.protocol.SimpleResponse;
 
+/**
+ * Creates a 404 Not Found response.  Used when the request resource doesn't map to any registered Responders. 
+ */
 public class NotFoundResponder implements Responder
 {
 	public Response makeResponse(Server server, Request request) throws Exception

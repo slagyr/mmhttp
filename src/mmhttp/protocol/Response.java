@@ -6,12 +6,19 @@ package mmhttp.protocol;
 import java.util.*;
 import java.text.*;
 
+/**
+ * The base class for building HTTP 1.1 compliant responses.
+ */
 public abstract class Response
 {
   public static final String DEFAULT_CONTENT_TYPE = "text/html; charset=utf-8";
 
 	protected static final String CRLF = "\r\n";
 
+  /**
+   * HTTP Protocol fluff.
+   * @return an HTTP date format
+   */
   public static SimpleDateFormat makeStandardHttpDateFormat()
   {
     //SimpleDateFormat is not thread safe, so we need to create each instance independently.
@@ -24,29 +31,57 @@ public abstract class Response
 	private HashMap headers = new HashMap(17);
   private String contentType = DEFAULT_CONTENT_TYPE;
 
+  /**
+   * Empty constructor.
+   */
 	public Response()
 	{
 	}
 
+  /**
+   * A constructor that sets the status of the response.
+   * @param status
+   */
 	public Response(int status)
 	{
 		this.status = status;
 	}
 
+  /**
+   * To be called when response has been prepared and is ready to go out the door.
+   * @param sender
+   * @throws Exception
+   */
 	public abstract void readyToSend(ResponseSender sender) throws Exception;
 	protected abstract void addSpecificHeaders();
+
+  /**
+   * A method to get the size of the response content.  Abstract because, who know how the response is built?
+   * @return number of bytes in content
+   */
 	public abstract int getContentSize();
 
+  /**
+   * @return the status
+   */
 	public int getStatus()
 	{
 		return status;
 	}
 
-	public void setStatus(int s)
+  /**
+   * Sets the status of the response
+   * @param status
+   */
+	public void setStatus(int status)
 	{
-		status = s;
+		this.status = status;
 	}
 
+  /**
+   * Build the headers portion of the response.
+   * @return headers string
+   */
 	public String makeHttpHeaders()
 	{
 		StringBuffer text = new StringBuffer();
@@ -56,47 +91,86 @@ public abstract class Response
 		return text.toString();
 	}
 
+  /**
+   * @return the Content-Type header of the response
+   */
 	public String getContentType()
 	{
 		return contentType;
 	}
 
+  /**
+   * Sets the Content-Type header.
+   * @param type
+   */
 	public void setContentType(String type)
 	{
 		contentType = type;
 	}
 
+  /**
+   * Configures this response to be a redirect to the specified URL.
+   * @param location
+   */
 	public void redirect(String location)
 	{
 		status = 303;
 		addHeader("Location", location);
 	}
 
+  /**
+   * Configures the response for chaching by setting the Cache-Control header to 'max-age=&lt;age&gt;'.
+   * This response should be considered fresh, by the client, for &lt;age&gt; seconds.
+   * @param age
+   */
 	public void setMaxAge(int age)
 	{
 		addHeader("Cache-Control", "max-age=" + age);
 	}
 
+  /**
+   * Tells the client when the requested resource was last modified.  Sets the Last-Modified header.
+   * @param date
+   */
 	public void setLastModifiedHeader(String date)
 	{
 		addHeader("Last-Modified", date);
 	}
 
+  /**
+   * Gives the response an expiration data.  Sets the Expires header.
+   * @param date
+   */
 	public void setExpiresHeader(String date)
 	{
 		addHeader("Expires", date);
 	}
 
+  /**
+   * Add an header to the response.
+   * @param key
+   * @param value
+   */
 	public void addHeader(String key, String value)
 	{
 		headers.put(key, value);
 	}
 
+  /**
+   * Get the value of a header already set on this response.  Will return null if the specified header is not contained.
+   * @param key
+   * @return header value
+   */
 	public String getHeader(String key)
 	{
 		return (String) headers.get(key);
 	}
 
+  /**
+   * @param value
+   * @return a byte array representation of value encoded in UTF-8.
+   * @throws Exception
+   */
 	public byte[] getEncodedBytes(String value) throws Exception
 	{
 		return value.getBytes("UTF-8");
@@ -123,6 +197,11 @@ public abstract class Response
 		return getReasonPhrase(status);
 	}
 
+  /**
+   * Provideds the HTTP description for each response status code.
+   * @param status
+   * @return response phrase
+   */
 	public static String getReasonPhrase(int status)
 	{
 		switch(status)

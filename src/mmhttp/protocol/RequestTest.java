@@ -359,7 +359,7 @@ public class RequestTest extends TestCase
 		writeToPipe("Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==\r\n");
 		writeToPipe("\r\n");
 		finishParsing();
-		request.getCredentials();
+		request.parseCredentials();
 		assertEquals("Aladdin", request.getAuthorizationUsername());
 		assertEquals("open sesame", request.getAuthorizationPassword());
 	}
@@ -373,7 +373,7 @@ public class RequestTest extends TestCase
 		finishParsing();
 		try
 		{
-			request.getCredentials();
+			request.parseCredentials();
 		}
 		catch(Exception e)
 		{

@@ -3,6 +3,9 @@
 
 package mmhttp.server;
 
+/**
+ * An implementation of Authenticator that lets every request thought.  This is the default Authenticator used.
+ */
 public class PromiscuousAuthenticator extends Authenticator
 {
 	public boolean isAuthenticated(String username, String password)

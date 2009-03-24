@@ -3,18 +3,51 @@
 
 package mmhttp.protocol;
 
+
+/**
+ * This class supports Base 64 encoding and decoding.  In this library it is primarily used for HTTP digest authentication.
+ *
+ * <pre>
+ * RFC 2045 - Multipurpose Internet Mail Extensions (MIME) Part One:
+ * Format of Internet Message Bodies
+ * section 6.8.  Base64 Content-Transfer-Encoding
+ * The encoding process represents 24-bit groups of input bits as output
+ * strings of 4 encoded characters.  Proceeding from left to right, a
+ * 24-bit input group is formed by concatenating 3 8bit input groups.
+ * These 24 bits are then treated as 4 concatenated 6-bit groups, each
+ * of which is translated into a single digit in the base64 alphabet.
+ * When encoding a bit stream via the base64 encoding, the bit stream
+ * must be presumed to be ordered with the most-significant-bit first.
+ * That is, the first bit in the stream will be the high-order bit in
+ * the first 8bit byte, and the eighth bit will be the low-order bit in
+ * the first 8bit byte, and so on.
+ * </pre>
+ *
+ */
 public class Base64
 {
-	private static final byte[] base64Alphabet =
-	  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".getBytes();
+	private static final byte[] base64Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".getBytes();
 	private static final byte pad = '=';
 
 
-	public static String decode(String value) throws Exception
+  /**
+   * Decodes a block of Base 64 encoded text.
+   *
+   * @param text to be decoded
+   * @return decoded text
+   * @throws Exception
+   */
+	public static String decode(String text) throws Exception
 	{
-		return new String(decode(value.getBytes("UTF-8")));
+		return new String(decode(text.getBytes("UTF-8")));
 	}
 
+  /**
+   * Decodes an array of encoded bytes.
+   *
+   * @param bytes to be decoded
+   * @return decoded bytes
+   */
 	public static byte[] decode(byte[] bytes)
 	{
 		int lengthOfDecoding = getLengthOfDecoding(bytes);
@@ -41,11 +74,24 @@ public class Base64
 		return decoding;
 	}
 
-	public static String encode(String value) throws Exception
+  /**
+   * Encodes a block of text.
+   *
+   * @param text to encode
+   * @return encoded text
+   * @throws Exception
+   */
+	public static String encode(String text) throws Exception
 	{
-		return new String(encode(value.getBytes()));
+		return new String(encode(text.getBytes()));
 	}
 
+  /**
+   * Encodes an array of bytes.
+   *
+   * @param bytes to encode
+   * @return encoded bytes
+   */
 	public static byte[] encode(byte[] bytes)
 	{
 		int inputLength = bytes.length;
@@ -104,6 +150,12 @@ public class Base64
 		return length;
 	}
 
+  /**
+   * A helper method which is public only for testing purposes.
+   *
+   * @param b
+   * @return byte
+   */
 	public static byte getValueFor(byte b)
 	{
 		if(b == pad)

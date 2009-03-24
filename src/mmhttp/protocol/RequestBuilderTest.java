@@ -52,7 +52,7 @@ public class RequestBuilderTest extends TestCase
 				                                "!2 ";
 		builder.addInput("pageContent", content);
 
-		String inputString = builder.inputString();
+		String inputString = builder.queryString();
 		assertSubString("responder=saveData", inputString);
 		assertSubString("pageContent=%21fixture+fit.ColumnFixture%0A%0A%21path+classes%0A%0A%212+", inputString);
 		assertSubString("&", inputString);

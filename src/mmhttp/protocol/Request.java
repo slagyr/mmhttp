@@ -11,6 +11,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.net.URLDecoder;
 
+/**
+ * This class is one of the primary work horses of MM HTTP.  It parses incoming HTTP Requests and provided accessors
+ * to the data.
+ *
+ * Although compliant to the HTTP 1.1 protocol, it is by no means complete.  For example, only the GET and POST
+ * methods are supported.  But is does support multipart content and file uploads.
+ */
 public class Request
 {
 	private static final Pattern requestLinePattern = Pattern.compile("(\\p{Upper}+?) ([^\\s]+)");
@@ -35,7 +42,7 @@ public class Request
 	private boolean hasBeenParsed;
 	private long bytesParsed = 0;
 
-	public static Set buildAllowedMethodList()
+	private static Set buildAllowedMethodList()
 	{
 		Set<String> methods = new HashSet<String>(20);
 		methods.add("GET");
@@ -47,11 +54,23 @@ public class Request
 	{
 	}
 
+  /**
+   * Constructs a new Request with the provided InputStream, however the stream will not be read and the request
+   * will not be parsed until calling parse().
+   *
+   * @param input
+   * @throws Exception
+   */
 	public Request(InputStream input) throws Exception
 	{
 		this.input = new StreamReader(new BufferedInputStream(input));
 	}
 
+  /**
+   * Parses the request.
+   *
+   * @throws Exception
+   */
 	public void parse() throws Exception
 	{
 		readAndParseRequestLine();
@@ -106,6 +125,9 @@ public class Request
 		}
 	}
 
+  /**
+   * @return Returns the number of bytes in the content of the request. (The value of the Content-Length header)
+   */
 	public int getContentLength()
 	{
 		return Integer.parseInt((String) getHeader("Content-Length"));
@@ -163,7 +185,7 @@ public class Request
 			throw new HttpException("The " + match.group(1) + " method is not currently supported");
 	}
 
-	public void parseRequestUri(String requestUri)
+	private void parseRequestUri(String requestUri)
 	{
 		Matcher match = requestUriPattern.matcher(requestUri);
 		match.find();
@@ -183,46 +205,88 @@ public class Request
 		}
 	}
 
+  /**
+   * @return the Request Line: the first line of the request.
+   */
 	public String getRequestLine()
 	{
 		return requestLine;
 	}
 
+  /**
+   * @return the Request Uri: the resource being requested + the query string.
+   */
 	public String getRequestUri()
 	{
 		return requestURI;
 	}
 
+  /**
+   * @return the resource being requested.
+   */
 	public String getResource()
 	{
 		return resource;
 	}
 
+  /**
+   * @return the query string.  Individual values in the query string should be retrieved via the getInput() method.
+   *
+   * @see #getInput
+   */
 	public String getQueryString()
 	{
 		return queryString;
 	}
 
+  /**
+   * Tells you if the specified input was included in the query string or multipart data.
+   *
+   * @param key
+   * @return true if the input was provided
+   */
 	public boolean hasInput(String key)
 	{
 		return inputs.containsKey(key);
 	}
 
+  /**
+   * Retrives the value of inputs that were included in the query string or multipart data of the request.
+   *
+   * The return value will typically be a string unless the input represents an uploaded file in which case the return
+   * value would be of type UploadedFile. null is returned if the specified input doesn't exist.
+   *
+   * @param key
+   * @return the value of the input.
+   * @see UploadedFile
+   */
 	public Object getInput(String key)
 	{
 		return inputs.get(key);
 	}
 
+  /**
+   * @param key
+   * @return true if the header was included in the request
+   */
 	public boolean hasHeader(String key)
 	{
 		return headers.containsKey(key.toLowerCase());
 	}
 
-	public Object getHeader(String key)
+  /**
+   * Retrieves the value of HTTP headers in the request.  null is returned if the header was not present.
+   * @param key
+   * @return the value of the header
+   */
+	public String getHeader(String key)
 	{
 		return headers.get(key.toLowerCase());
 	}
 
+  /**
+   * @return the entity body of the request.
+   */
 	public String getBody()
 	{
 		return entityBody;
@@ -233,6 +297,9 @@ public class Request
 		return url.substring(1);
 	}
 
+  /**
+   * @return a handy string representation of the request, useful for debugging
+   */
 	public String toString()
 	{
 		StringBuffer buffer = new StringBuffer();
@@ -276,6 +343,12 @@ public class Request
 		return foo.replaceAll("[\n\r]+", "|");
 	}
 
+  /**
+   * Decodes the URL unescaping all the escaped characters.
+   *
+   * @param content
+   * @return the decoded URL
+   */
 	public static String decodeContent(String content)
 	{
 		String escapedContent = null;
@@ -290,18 +363,37 @@ public class Request
 		return escapedContent;
 	}
 
+  /**
+   * @return true if parse() completed successfully.
+   */
 	public boolean hasBeenParsed()
 	{
 		return hasBeenParsed;
 	}
 
+  /**
+   * Helper method public only for testing.
+   *
+   * Decodes the Base 64 digest autentication.
+   *
+   * @param headerValue
+   * @return the userpass string
+   * @throws Exception
+   */
 	public String getUserpass(String headerValue) throws Exception
 	{
 		String encodedUserpass = headerValue.substring(6);
 		return Base64.decode(encodedUserpass);
 	}
 
-	public void getCredentials() throws Exception
+  /**
+   * The digest authentication parameters are not used by default.  This method should be called to parse and load
+   * the username and password.  Be sure to call this before calling getAuthorizationUsername() or
+   * getAuthorizationPassword().
+   *
+   * @throws Exception
+   */
+	public void parseCredentials() throws Exception
 	{
 		if(hasHeader("Authorization"))
 		{
@@ -316,16 +408,28 @@ public class Request
 		}
 	}
 
+  /**
+   * @return the digest authorization username.
+   */
 	public String getAuthorizationUsername()
 	{
 		return authorizationUsername;
 	}
 
+  /**
+   * @return the digest authorization password.
+   */
 	public String getAuthorizationPassword()
 	{
 		return authorizationPassword;
 	}
 
+  /**
+   * Sometimes clients will stop transmitting halfway through a request.  This method gives some indiction of parsing
+   * progress being made.
+   *
+   * @return exactly what you might think
+   */
 	public long numberOfBytesParsed()
 	{
 		return bytesParsed + input.numberOfBytesConsumed();

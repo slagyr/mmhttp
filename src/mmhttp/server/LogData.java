@@ -5,6 +5,9 @@ package mmhttp.server;
 
 import java.util.GregorianCalendar;
 
+/**
+ * An object representing all the loggable data of a request.
+ */
 public class LogData implements Cloneable
 {
 	public String host;

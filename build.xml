@@ -1,73 +1,99 @@
 <project name="MMHTTP" default="jar" basedir=".">
-  <description>
-    MMHTTP: A simple HTTP library and Web server
-  </description>
+    <description>
+        MMHTTP: A simple HTTP library and Web server
+    </description>
 
-  <property name="src" location="src"/>
-  <property name="classes" location="classes"/>
-  <property name="lib" location="lib"/>
-  <property name="version" value="1.1"/>
-  <property name="jarfile" value="mmhttp-${version}.jar"/>
+    <property name="src" location="src"/>
+    <property name="classes" location="classes"/>
+    <property name="lib" location="lib"/>
+    <property name="version" value="1.1"/>
+    <property name="jarfile" value="mmhttp-${version}.jar"/>
 
-  <path id="classpath">
-    <pathelement path="${classes}"/>
-    <fileset dir="${lib}">
-      <include name="*.jar"/>
-    </fileset>
-  </path>
-
-  <target name="build" depends="clean, compile" description="clean, then compile the source"/>
-
-  <target name="testbuild" depends="clean, unit_test"
-          description="Run this target any time you change code or acceptance tests. It will clean, then compile the source, run all the unit test and fintesse acceptance tests."/>
-
-  <target name="jar" depends="build" description="generate the jar file">
-    <delete file="${jarfile}"/>
-
-    <jar jarfile="${jarfile}" basedir="classes">
-      <include name="**/*"/>
-      <exclude name="**/*Test.class"/>
-      <manifest>
-        <attribute name="Built-By" value="Micah Martin"/>
-      </manifest>
-    </jar>
-  </target>
-
-  <target name="compile" depends="init" description="compile the source (make)">
-    <javac srcdir="${src}" destdir="${classes}" classpathref="classpath" debug="true"/>
-  </target>
-
-  <target name="clean" description="delete everything in the classes directory">
-    <mkdir dir="${classes}"/>
-    <delete includeemptydirs="true">
-      <fileset dir="${classes}" includes="**/"/>
-    </delete>
-  </target>
-
-  <target name="unit_test" depends="compile" description="run the unit tests">
-    <junit fork="yes" printsummary="on" haltonfailure="yes" haltonerror="yes">
-      <classpath refid="classpath"/>
-      <!--<formatter type="xml" usefile="false" />-->
-      <formatter type="brief" usefile="false"/>
-      <batchtest fork="no" todir="etc/test_reports">
-        <fileset dir="${src}">
-          <include name="**/*Test.java"/>
-          <exclude name="**/RegexTest.java"/>
+    <path id="classpath">
+        <pathelement path="${classes}"/>
+        <fileset dir="${lib}">
+            <include name="*.jar"/>
         </fileset>
-      </batchtest>
-    </junit>
-  </target>
+    </path>
 
-  <target name="init">
-    <mkdir dir="${classes}"/>
-  </target>
+    <target name="build" depends="clean, compile" description="clean, then compile the source"/>
 
-  <target name="copyrights">
-      <exec command="ruby">
-          <arg value="-rrubygems"/>
-          <arg value="-e"/>
-          <arg value="require 'mmcopyrights'; MM::Copyrights.process('src', 'java', '//-', IO.read('etc/copyright.txt'))"/>
-      </exec>
-  </target>
+    <target name="testbuild" depends="clean, unit_test"
+            description="Run this target any time you change code or acceptance tests. It will clean, then compile the source, run all the unit test and fintesse acceptance tests."/>
 
+    <target name="jar" depends="build" description="generate the jar file">
+        <delete file="${jarfile}"/>
+
+        <jar jarfile="${jarfile}" basedir="classes">
+            <include name="**/*"/>
+            <exclude name="**/*Test.class"/>
+            <manifest>
+                <attribute name="Built-By" value="Micah Martin"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="compile" depends="init" description="compile the source (make)">
+        <javac srcdir="${src}" destdir="${classes}" classpathref="classpath" debug="true"/>
+    </target>
+
+    <target name="clean" description="delete everything in the classes directory">
+        <mkdir dir="${classes}"/>
+        <delete includeemptydirs="true">
+            <fileset dir="${classes}" includes="**/"/>
+        </delete>
+    </target>
+
+    <target name="unit_test" depends="compile" description="run the unit tests">
+        <junit fork="yes" printsummary="on" haltonfailure="yes" haltonerror="yes">
+            <classpath refid="classpath"/>
+            <!--<formatter type="xml" usefile="false" />-->
+            <formatter type="brief" usefile="false"/>
+            <batchtest fork="no" todir="etc/test_reports">
+                <fileset dir="${src}">
+                    <include name="**/*Test.java"/>
+                    <exclude name="**/RegexTest.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+    <target name="init">
+        <mkdir dir="${classes}"/>
+    </target>
+
+    <target name="copyrights">
+        <exec command="ruby">
+            <arg value="-rrubygems"/>
+            <arg value="-e"/>
+            <arg value="require 'mmcopyrights'; MM::Copyrights.process('src', 'java', '//-', IO.read('etc/copyright.txt'))"/>
+        </exec>
+    </target>
+
+
+    <target name="javadoc">
+        <delete dir="etc/docs"/>
+        <javadoc destdir="etc/docs"
+                 author="false"
+                 version="true"
+                 use="true"
+                 windowtitle="MM HTTP">
+
+            <classpath refid="classpath"/>
+            
+            <fileset dir="src" defaultexcludes="yes">
+                <include name="**/*"/>
+                <exclude name="**/*Test.java"/>
+                <exclude name="**/Mock*.java"/>
+            </fileset>
+
+            <doctitle><![CDATA[<h1>MM HTTP</h1>]]></doctitle>
+            <bottom><![CDATA[<i>Copyright &#169; 2009 Micah Martin. All Rights Reserved.</i>]]></bottom>
+            <tag name="todo" scope="all" description="To do:"/>
+            <!--<group title="Group 1 Packages" packages="com.dummy.test.a*"/>-->
+            <!--<group title="Group 2 Packages" packages="com.dummy.test.b*:com.dummy.test.c*"/>-->
+            <!--<link offline="true" href="http://java.sun.com/j2se/1.5.0/docs/api/" packagelistLoc="C:\tmp"/>-->
+            <!--<link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>-->
+        </javadoc>
+    </target>
 </project>

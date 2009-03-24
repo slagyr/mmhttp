@@ -9,6 +9,9 @@ import java.util.*;
 import java.net.URLEncoder;
 import java.io.*;
 
+/**
+ * While Request is used for parsing requests, this clas is used to build request.
+ */
 public class RequestBuilder
 {
 	private static final byte[] ENDL = "\r\n".getBytes();
@@ -24,21 +27,40 @@ public class RequestBuilder
 	private boolean isMultipart = false;
 	private int bodyLength = 0;
 
+  /**
+   * Contructs a new RequestBuilder with the specified resource.  This is sufficient for a minimal compliant HTTP
+   * request.
+   *
+   * @param resource
+   */
 	public RequestBuilder(String resource)
 	{
 		this.resource = resource;
 	}
 
+  /**
+   * Sets the HTTP method... GET, POST, etc...
+   * @param method
+   */
 	public void setMethod(String method)
 	{
 		this.method = method;
 	}
 
+  /**
+   * Adds a header to the request.
+   * @param key
+   * @param value
+   */
 	public void addHeader(String key, String value)
 	{
 		headers.put(key, value);
 	}
 
+  /**
+   * @return an HTTP 1.1 compliant string representation of the request.
+   * @throws Exception
+   */
 	public String getText() throws Exception
 	{
 		ByteArrayOutputStream output = new ByteArrayOutputStream();
@@ -52,7 +74,7 @@ public class RequestBuilder
 		text.append(method).append(" ").append(resource);
 		if(isGet())
 		{
-			String inputString = inputString();
+			String inputString = queryString();
 			if(inputString.length() > 0)
 				text.append("?").append(inputString);
 		}
@@ -65,6 +87,12 @@ public class RequestBuilder
 		return method.equals("GET");
 	}
 
+  /**
+   * Writes an HTTP 1.1 compiant representation of the request to the provided OutputStream.
+   *
+   * @param output
+   * @throws Exception
+   */
 	public void send(OutputStream output) throws Exception
 	{
 		output.write(buildRequestLine().getBytes("UTF-8"));
@@ -90,7 +118,7 @@ public class RequestBuilder
 	{
 		if(!isMultipart)
 		{
-			byte[] bytes = inputString().getBytes("UTF-8");
+			byte[] bytes = queryString().getBytes("UTF-8");
 			bodyParts.add(new ByteArrayInputStream(bytes));
 			bodyLength += bytes.length;
 		}
@@ -156,12 +184,24 @@ public class RequestBuilder
 			addHeader("Host", "");
 	}
 
+  /**
+   * Add inputs that will be go in the query string.
+   *
+   * @param key
+   * @param value
+   * @throws Exception
+   */
 	public void addInput(String key, Object value) throws Exception
 	{
 		inputs.put(key, value);
 	}
 
-	public String inputString() throws Exception
+  /**
+   * Builds the query string for this request.
+   * @return query string
+   * @throws Exception
+   */
+	public String queryString() throws Exception
 	{
 		StringBuffer buffer = new StringBuffer();
 		boolean first = true;
@@ -176,6 +216,13 @@ public class RequestBuilder
 		return buffer.toString();
 	}
 
+  /**
+   * Adds digest authentication credentials to the request.
+   *
+   * @param username
+   * @param password
+   * @throws Exception
+   */
 	public void addCredentials(String username, String password) throws Exception
 	{
 		String rawUserpass = username + ":" + password;
@@ -183,12 +230,23 @@ public class RequestBuilder
 		addHeader("Authorization", "Basic " + userpass);
 	}
 
+  /**
+   * Use to build the Host header.
+   *
+   * @param host
+   * @param port
+   */
 	public void setHostAndPort(String host, int port)
 	{
 		this.host = host;
 		this.port = port;
 	}
 
+  /**
+   * Build a unique boundary for sparating multi-part content.
+   *
+   * @return a unique boundary
+   */
 	public String getBoundary()
 	{
 		if(boundary == null)
@@ -196,12 +254,30 @@ public class RequestBuilder
 		return boundary;
 	}
 
+  /**
+   * Add the input as multi-part content to the request.  Once called the request becomes a multi-part request
+   * and all inputs will be included in the body of the request, ie. no query string.
+   *
+   * @param name
+   * @param content
+   * @throws Exception
+   */
 	public void addInputAsPart(String name, Object content) throws Exception
 	{
 		multipart();
     addInput(name, content);
 	}
 
+  /**
+   * Same as addInputAsPart(String name, Object content) except that this version should be used for large datasets
+   * that wouldn't want to load into memory all at once.
+   * 
+   * @param name
+   * @param input
+   * @param size - number of bytes in the input stream
+   * @param contentType - for the Content-Type header
+   * @throws Exception
+   */
 	public void addInputAsPart(String name, InputStream input, int size, String contentType) throws Exception
 	{
     addInputAsPart(name, new InputStreamPart(input, size, contentType));
@@ -217,7 +293,7 @@ public class RequestBuilder
 		}
 	}
 
-	private static class InputStreamPart
+  private static class InputStreamPart
 	{
 		public InputStream input;
 		public int size;

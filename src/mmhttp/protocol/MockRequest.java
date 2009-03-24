@@ -58,7 +58,7 @@ public class MockRequest extends Request
 		parseException = e;
 	}
 
-	public void getCredentials()
+	public void parseCredentials()
 	{
 		return;
 	}

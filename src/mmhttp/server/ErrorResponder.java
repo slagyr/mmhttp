@@ -7,6 +7,10 @@ import mmhttp.protocol.Response;
 import mmhttp.protocol.Request;
 import mmhttp.protocol.SimpleResponse;
 
+/**
+ * Used in the event of an error.  If a Responder should thrown an Exception, the ErrorReponder will be created to
+ * respond with a 400 error along with the message of the Exception.
+ */
 public class ErrorResponder implements Responder
 {
 	Exception exception;

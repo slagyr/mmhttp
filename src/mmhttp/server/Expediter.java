@@ -16,6 +16,12 @@ import java.io.OutputStream;
 import java.io.IOException;
 import java.util.GregorianCalendar;
 
+/**
+ * This class fills a role in the restaurant metaphore.  In a restaurant, the expediter is a person who stands at the
+ * window of the kitchen where she puts in orders, organizes, and adds the final touch on all the orders before they get
+ * served.  The Expediter in this context takes a socket connection, oversees the parsing of the request, the building
+ * of the response, and the sending of data.
+ */
 public class Expediter implements ResponseSender
 {
 	private Socket socket;
@@ -29,15 +35,25 @@ public class Expediter implements ResponseSender
 	private long requestParsingDeadline;
 	private boolean hasError;
 
-  public Expediter(Socket s, Server server) throws Exception
+  /**
+   * Constructs an Expediter with a fresh socket connection, and the Server from whence it came.
+   * @param socket
+   * @param server
+   * @throws Exception
+   */
+  public Expediter(Socket socket, Server server) throws Exception
 	{
 		this.server = server;
-		socket = s;
-		input = s.getInputStream();
-		output = s.getOutputStream();
+		this.socket = socket;
+		input = socket.getInputStream();
+		output = socket.getOutputStream();
 		requestParsingTimeLimit = 10000;
 	}
 
+  /**
+   * Expedites the request.
+   * @throws Exception
+   */
 	public void start() throws Exception
 	{
 		try
@@ -56,16 +72,28 @@ public class Expediter implements ResponseSender
 		}
 	}
 
-	public void setRequestParsingTimeLimit(long t)
+  /**
+   * Sets the time, in milliseconds, to wait for the request to be parsed. Default: 10000 (10 seconds).
+   * @param millis
+   */
+	public void setRequestParsingTimeLimit(long millis)
 	{
-		requestParsingTimeLimit = t;
+		requestParsingTimeLimit = millis;
 	}
 
+  /**
+   * @return requestParsingTimeLimit (milliseconds)
+   */
 	public long getRequestParsingTimeLimit()
 	{
 		return requestParsingTimeLimit;
 	}
 
+  /**
+   * Writes the given bytes to the socket output stream.
+   * @param bytes
+   * @throws Exception
+   */
 	public void send(byte[] bytes) throws Exception
 	{
 		try
@@ -79,6 +107,10 @@ public class Expediter implements ResponseSender
 		}
 	}
 
+  /**
+   * Logs the request and closes the socket.
+   * @throws Exception
+   */
 	public void close() throws Exception
 	{
 		try
@@ -92,17 +124,30 @@ public class Expediter implements ResponseSender
 		}
 	}
 
+  /**
+   * @return the socket used in construction.
+   * @throws Exception
+   */
 	public Socket getSocket() throws Exception
 	{
 		return socket;
 	}
 
+  /**
+   * Instantiates the request.
+   * @return Request
+   * @throws Exception
+   */
 	public Request makeRequest() throws Exception
 	{
 		request = new Request(input);
 		return request;
 	}
 
+  /**
+   * Initiated the delivery of the response.
+   * @throws Exception
+   */
 	public void sendResponse() throws Exception
 	{
 		response.readyToSend(this);
@@ -130,6 +175,12 @@ public class Expediter implements ResponseSender
 		return response;
 	}
 
+  /**
+   * Creates the correct response object based on the request and authentication settings.
+   * @param request
+   * @return Response
+   * @throws Exception
+   */
 	public Response createGoodResponse(Request request) throws Exception
 	{
 		Response response;
@@ -227,6 +278,13 @@ public class Expediter implements ResponseSender
 		}
 	}
 
+  /**
+   * Constructs a LogData object representing the loggable data of this request.
+   * @param socket
+   * @param request
+   * @param response
+   * @return LogData
+   */
 	public static LogData makeLogData(Socket socket, Request request, Response response)
 	{
 		LogData data = new LogData();
@@ -240,6 +298,13 @@ public class Expediter implements ResponseSender
 		return data;
 	}
 
+  /**
+   * Constructs the LogData and sends it to the Server's Logger for logging.
+   * @param s
+   * @param request
+   * @param response
+   * @throws Exception
+   */
 	public void log(Socket s, Request request, Response response) throws Exception
 	{
 		if(server.logger != null)

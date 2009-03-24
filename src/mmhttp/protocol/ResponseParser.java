@@ -10,6 +10,9 @@ import java.util.*;
 import java.util.regex.*;
 import java.net.Socket;
 
+/**
+ * Used to parse HTTP 1.1 responses.
+ */
 public class ResponseParser
 {
 	private int status;
@@ -20,6 +23,11 @@ public class ResponseParser
 	private static final Pattern statusLinePattern = Pattern.compile("HTTP/\\d.\\d (\\d\\d\\d) ");
 	private static final Pattern headerPattern = Pattern.compile("([^:]*): (.*)");
 
+  /**
+   * The Response will be read out of the provided InputStream.
+   * @param input
+   * @throws Exception
+   */
 	public ResponseParser(InputStream input) throws Exception
 	{
 		this.input = new StreamReader(input);
@@ -104,26 +112,43 @@ public class ResponseParser
 		input.read(2);
 	}
 
+  /**
+   * @return the status of the response
+   */
 	public int getStatus()
 	{
 		return status;
 	}
 
+  /**
+   * @return the body of the response
+   */
 	public String getBody()
 	{
 		return body;
 	}
 
+  /**
+   * @param key
+   * @return the value of the specified header, null if it doesn't exist
+   */
 	public String getHeader(String key)
 	{
 		return headers.get(key);
 	}
 
+  /**
+   * @param key
+   * @return true if the parsed response contains the specified header
+   */
 	public boolean hasHeader(String key)
 	{
 		return headers.containsKey(key);
 	}
 
+  /**
+   * @return a human readable representation of the response.
+   */
 	public String toString()
 	{
 		StringBuffer buffer = new StringBuffer();
@@ -139,6 +164,14 @@ public class ResponseParser
 		return buffer.toString();
 	}
 
+  /**
+   * A convenience method that will perform a complete HTTP request, returning a parsed response.
+   * @param hostname
+   * @param hostPort
+   * @param builder
+   * @return parsed response.
+   * @throws Exception
+   */
 	public static ResponseParser performHttpRequest(String hostname, int hostPort, RequestBuilder builder) throws Exception
 	{
 		Socket socket = new Socket(hostname, hostPort);
