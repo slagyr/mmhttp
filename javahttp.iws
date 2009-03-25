@@ -59,33 +59,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Request.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/Request.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="390" column="69" selection-start="10598" selection-end="10598" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Response.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/Response.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="202" column="28" selection-start="4570" selection-end="4570" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Authenticator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Authenticator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="78" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Expediter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Expediter.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -104,10 +77,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleMain.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SampleMain.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mmhttp/server/SampleMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="3" column="0" selection-start="142" selection-end="769" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.rdoc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="70" selection-start="1847" selection-end="1847" vertical-scroll-proportion="0.82064515">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResponderFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/ResponderFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="27" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Responder.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Responder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="110" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -267,32 +267,6 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="server" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="javahttp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="javahttp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="mmhttp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="mmhttp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="protocol" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -594,27 +568,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/HttpException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/InputStreamResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/Base64.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="17" selection-start="4258" selection-end="4258" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/ChunkedResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="102" column="22" selection-start="2681" selection-end="2681" vertical-scroll-proportion="0.0">
@@ -701,7 +654,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mmhttp/server/SampleMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="3" column="0" selection-start="142" selection-end="769" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Responder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="110" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/ResponderFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="27" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rdoc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="70" selection-start="1847" selection-end="1847" vertical-scroll-proportion="0.82064515">
           <folding />
         </state>
       </provider>
