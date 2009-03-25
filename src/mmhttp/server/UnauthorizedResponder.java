@@ -7,7 +7,9 @@ import mmhttp.protocol.Response;
 import mmhttp.protocol.Request;
 import mmhttp.protocol.SimpleResponse;
 
-
+/**
+ * Generates a 401 response which will usually cause the browser to promt the user for credentials.
+ */
 public class UnauthorizedResponder implements Responder
 {
 	public Response makeResponse(Server server, Request request) throws Exception

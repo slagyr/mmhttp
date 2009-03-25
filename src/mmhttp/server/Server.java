@@ -84,13 +84,11 @@ public class Server implements SocketServer
 
   /**
    * Starts the server.
-   * @return
    * @throws Exception
    */
-  public boolean start() throws Exception
+  public void start() throws Exception
   {
     theService = new SocketService(port, this, host);
-    return true;
   }
 
   /**

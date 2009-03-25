@@ -8,6 +8,8 @@
     <property name="lib" location="lib"/>
     <property name="version" value="1.1"/>
     <property name="jarfile" value="mmhttp-${version}.jar"/>
+    <property name="github.files" value="/Users/micahmartin/Projects/slagyr.github.com"/>
+    <property name="doc.home" value="${github.files}/mmhttp"/>
 
     <path id="classpath">
         <pathelement path="${classes}"/>
@@ -70,7 +72,6 @@
         </exec>
     </target>
 
-
     <target name="javadoc">
         <delete dir="etc/docs"/>
         <javadoc destdir="etc/docs"
@@ -95,5 +96,17 @@
             <!--<link offline="true" href="http://java.sun.com/j2se/1.5.0/docs/api/" packagelistLoc="C:\tmp"/>-->
             <!--<link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>-->
         </javadoc>
+    </target>
+
+    <target name="deploy_docs" depends="javadoc">
+        <mkdir dir="${github.files}"/>
+        <copy todir="${doc.home}">
+            <fileset dir="etc/docs">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+        <exec dir="${github.files}" command="git add mmhttp"/>
+        <exec dir="${github.files}" command="git commit -a -m 'updating mmhttp javadocs'"/>
+        <exec dir="${github.files}" command="git push"/>
     </target>
 </project>
