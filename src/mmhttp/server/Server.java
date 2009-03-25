@@ -64,6 +64,15 @@ public class Server implements SocketServer
   }
 
   /**
+   * A convenience constructor that sets the port.
+   * @param port
+   */
+  public Server(int port)
+  {
+    this.port = port;
+  }
+
+  /**
    * Shortcut to ResponderFactory.register.
    * @param pattern
    * @param klass

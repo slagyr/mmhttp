@@ -11,8 +11,7 @@ public class SampleMain
 {
   public static void main(String[] args) throws Exception
   {
-    Server server = new Server();
-    server.port = 8002;
+    Server server = new Server(8002);
     server.register("hello.*", HelloResponder.class);
     server.start();
   }
