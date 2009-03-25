@@ -68,19 +68,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleMain.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/SampleMain.java">
+      <file leaf-file-name="SampleMain.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SampleMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="62" selection-start="625" selection-end="688" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="19" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.33827892">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.rdoc" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.rdoc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="10" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.5419355">
+            <state line="43" column="22" selection-start="1283" selection-end="1283" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,15 +110,6 @@
         <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Responder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="26" column="0" selection-start="996" selection-end="996" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnauthorizedResponder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/UnauthorizedResponder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="99" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -213,6 +206,24 @@
           <option name="myItemId" value="src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="javahttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="javahttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="mmhttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="mmhttp" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -270,32 +281,6 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="javahttp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="javahttp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="mmhttp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="mmhttp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="protocol" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
     </subPane>
   </component>
   <component name="ProjectReloadState">
@@ -341,7 +326,7 @@
   </component>
   <component name="RunManager" selected="Application.SampleMain">
     <tempConfiguration default="false" name="SampleMain" type="Application" factoryName="Application" enabled="false" merge="false" runner="emma">
-      <option name="MAIN_CLASS_NAME" value="mmhttp.server.SampleMain" />
+      <option name="MAIN_CLASS_NAME" value="SampleMain" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -352,13 +337,7 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="javahttp" />
       <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51072" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
@@ -531,16 +510,16 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14377338" sideWeight="0.7640343" order="0" side_tool="false" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14377338" sideWeight="0.6679353" order="0" side_tool="false" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45480496" sideWeight="0.5" order="8" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="14" side_tool="false" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22930542" sideWeight="0.5" order="1" side_tool="false" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22930542" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1111705" sideWeight="0.6679353" order="4" side_tool="false" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32540438" sideWeight="0.5" order="10" side_tool="false" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32540438" sideWeight="0.5" order="10" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39946738" sideWeight="0.5" order="12" side_tool="false" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" />
@@ -594,13 +573,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/MockRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/RequestBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
@@ -678,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="5" selection-start="2176" selection-end="2176" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/SimpleResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="19" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
@@ -692,17 +657,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/SampleMain.java">
+    <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="62" selection-start="625" selection-end="688" vertical-scroll-proportion="0.0">
+        <state line="43" column="22" selection-start="1283" selection-end="1283" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.rdoc">
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="10" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.5419355">
+        <state line="65" column="5" selection-start="2176" selection-end="2176" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SampleMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.33827892">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
