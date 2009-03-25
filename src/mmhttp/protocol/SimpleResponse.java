@@ -21,12 +21,24 @@ public class SimpleResponse extends Response
 	}
 
   /**
-   * This constructor will also set the status of the response.
+   * A convenience contructor that will set the port.
    * @param status
    */
 	public SimpleResponse(int status)
 	{
 		super(status);
+	}
+
+  /**
+   * A convenience contructor that will set the port and content.
+   * @param status
+   * @param content
+   * @throws Exception
+   */
+	public SimpleResponse(int status, String content) throws Exception
+	{
+		super(status);
+    setContent(content);
 	}
 
   /**

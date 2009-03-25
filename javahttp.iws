@@ -59,15 +59,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Expediter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Expediter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="29" selection-start="3723" selection-end="3723" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Server.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,7 +71,7 @@
       <file leaf-file-name="SampleMain.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mmhttp/server/SampleMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="770" selection-end="770" vertical-scroll-proportion="0.0">
+            <state line="21" column="62" selection-start="625" selection-end="688" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -89,7 +80,16 @@
       <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.rdoc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="12" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.55741936">
+            <state line="35" column="10" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.5419355">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleResponse.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/SimpleResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="19" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -267,6 +267,32 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="server" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="javahttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="javahttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="mmhttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="mmhttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="protocol" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -568,13 +594,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/ChunkedResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="22" selection-start="2681" selection-end="2681" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/MockRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="13" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
@@ -666,16 +685,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/SimpleResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="19" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/mmhttp/server/SampleMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="770" selection-end="770" vertical-scroll-proportion="0.0">
+        <state line="21" column="62" selection-start="625" selection-end="688" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="12" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.55741936">
+        <state line="35" column="10" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.5419355">
           <folding />
         </state>
       </provider>
