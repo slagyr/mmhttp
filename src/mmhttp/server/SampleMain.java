@@ -21,7 +21,7 @@ public class SampleMain
     public Response makeResponse(Server server, Request request) throws Exception
     {
       SimpleResponse response = new SimpleResponse(200);
-      response.setContent("Hello World!");
+      response.setContent("<h1>Hello World!</h1>");
       return response;
     }
   }

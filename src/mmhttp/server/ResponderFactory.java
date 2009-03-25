@@ -20,10 +20,10 @@ import java.util.ArrayList;
  */
 public class ResponderFactory
 {
-  ArrayList<Registration> registrations = new ArrayList<Registration>();
-  
+  private ArrayList<Registration> registrations = new ArrayList<Registration>();
+
   /**
-   * Used in the event that none of the registered Responders match a request.
+   * Used in the event that none of the registered Responders match a request.  Default: NotFoundResponder
    */
   public Class defaultResponder = NotFoundResponder.class;
 
@@ -39,7 +39,7 @@ public class ResponderFactory
    * <p>The order in which Responder are registere is important. Since a given request may match multiple regular
    * expressions, the factory will follow a simple 'first come, first served' policy. That is the first registered
    * Responder to match the requested resource will be instantiated to process the request.</p>
-   * 
+   *
    * @param regex
    * @param klass
    */

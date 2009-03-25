@@ -1,0 +1,57 @@
+== MM HTTP
+
+A simple Java HTTP server.  Simple.  This projects does not pretend to be anything like a full stack web application
+framework.  It's for simple, dynamic HTTP content.
+
+== History
+
+This code has been extracted from the FitNesse project.  One distinguishing aspect of FitNesse is it's "stand-alone"
+ability.  Back in the day, FitNesse was a web server in a jar file.  It has since grown beyond that but the simplicity
+of a stand alone web server was grand.
+
+MM HTTP offer that ability.
+
+== Usage
+
+Here is program that uses MM HTTP to start a server.
+
+    import mmhttp.server;
+    import mmhttp.protocol.Response;
+    import mmhttp.protocol.Request;
+    import mmhttp.protocol.SimpleResponse;
+
+    public class SampleMain
+    {
+      public static void main(String[] args) throws Exception
+      {
+        Server server = new Server(8000);
+        server.register("hello.*", HelloResponder.class);
+        server.start();
+      }
+
+      public static class HelloResponder implements Responder
+      {
+        public Response makeResponse(Server server, Request request) throws Exception
+        {
+          SimpleResponse response = new SimpleResponse(200);
+          response.setContent("<h1>Hello World!</h1>");
+          return response;
+        }
+      }
+    }
+
+== Documentation
+
+You will find the javadocs for the classes in this framework at:
+
+http://slagyr.github.com/mmhttp/index.html
+
+== Key Concepts
+
+Command Pattern.  This framework is built on the Command pattern where Responder is "Command" class.  You can create
+your own implementations of Responder and register them, along with a resource pattern, on the server.  When the Server
+receives a request, it will search through all the registered Responders to find a pattern that matches the requested
+resource.  Once found, the Responder will be instantiated and invoked.
+
+
+
