@@ -86,6 +86,7 @@
                 <include name="**/*"/>
                 <exclude name="**/*Test.java"/>
                 <exclude name="**/Mock*.java"/>
+                <exclude name="**/SampleMain.java"/>
             </fileset>
 
             <doctitle><![CDATA[<h1>MM HTTP</h1>]]></doctitle>

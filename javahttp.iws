@@ -68,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleMain.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SampleMain.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SampleMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.33827892">
+            <state line="19" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,10 +133,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="53" selection-start="4437" selection-end="4437" vertical-scroll-proportion="-47.157894">
+            <state line="88" column="34" selection-start="3342" selection-end="3342" vertical-scroll-proportion="0.59694654">
               <folding />
             </state>
           </provider>
@@ -629,13 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="53" selection-start="4437" selection-end="4437" vertical-scroll-proportion="-47.157894">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Responder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="0" selection-start="996" selection-end="996" vertical-scroll-proportion="0.0">
@@ -673,10 +666,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SampleMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.33827892">
+        <state line="19" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="34" selection-start="3342" selection-end="3342" vertical-scroll-proportion="0.59694654">
+          <folding />
         </state>
       </provider>
     </entry>
