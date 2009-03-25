@@ -11,8 +11,7 @@ public class SampleMain
 {
   public static void main(String[] args) throws Exception
   {
-    Server server = new Server();
-    server.port = 8002;
+    Server server = new Server(8002);
     server.register("hello.*", HelloResponder.class);
     server.start();
   }
@@ -22,7 +21,7 @@ public class SampleMain
     public Response makeResponse(Server server, Request request) throws Exception
     {
       SimpleResponse response = new SimpleResponse(200);
-      response.setContent("Hello World!");
+      response.setContent("<h1>Hello World!</h1>");
       return response;
     }
   }
