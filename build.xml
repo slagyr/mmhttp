@@ -25,8 +25,13 @@
 
     <target name="jar" depends="build" description="generate the jar file">
         <delete file="${jarfile}"/>
-
-        <jar jarfile="${jarfile}" basedir="classes">
+        <unzip dest="${classes}">
+            <fileset dir="${lib}">
+                <include name="*.jar"/>
+                <exclude name="junit*.jar"/>
+            </fileset>
+        </unzip>
+        <jar jarfile="${jarfile}" basedir="${classes}">
             <include name="**/*"/>
             <exclude name="**/*Test.class"/>
             <manifest>
@@ -110,4 +115,8 @@
         <exec dir="${github.files}" command="git commit -a -m 'updating mmhttp javadocs'"/>
         <exec dir="${github.files}" command="git push"/>
     </target>
+
+    <!--<target name="deploy_jar">-->
+        <!---->
+    <!--</target>-->
 </project>

@@ -11,14 +11,18 @@ of a stand alone web server was grand.
 
 MM HTTP offer that ability.
 
+== Download
+
+All you'll need is t he jar file.
+
+http://cloud.github.com/downloads/slagyr/mmhttp/mmhttp-1.1.jar
+
 == Usage
 
 Here is program that uses MM HTTP to start a server.
 
-    import mmhttp.server;
-    import mmhttp.protocol.Response;
-    import mmhttp.protocol.Request;
-    import mmhttp.protocol.SimpleResponse;
+    import mmhttp.protocol.*;
+    import mmhttp.server.*;
 
     public class SampleMain
     {
@@ -37,6 +41,13 @@ Here is program that uses MM HTTP to start a server.
         }
       }
     }
+
+And here's how you compile and run it.
+
+    javac -classpath mmhttp-1.1.jar SampleMain.java
+    java -classpath mmhttp-1.1.jar SampleMain
+
+Then visit http://localhost:8000/hello to see it in action.   
 
 == Documentation
 
