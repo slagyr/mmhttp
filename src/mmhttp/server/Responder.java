@@ -5,6 +5,7 @@ package mmhttp.server;
 
 import mmhttp.protocol.Response;
 import mmhttp.protocol.Request;
+import mmhttp.protocol.MockRequest;
 
 /**
  * <p>An interface that custom Responders must implement.</p>

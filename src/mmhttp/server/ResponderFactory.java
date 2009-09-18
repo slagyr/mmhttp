@@ -26,14 +26,49 @@ public class ResponderFactory
    */
   private Registration defaultRegistration = new ResponderRegistration(null, new NotFoundResponder());
 
+  /**
+   * Set the default (not found) responder using a Responder class.
+   *
+   * @param responderClass
+   */
   public void setDefault(Class responderClass)
   {
     defaultRegistration = new ClassRegistration(null, responderClass);
   }
 
+  /**
+   * Set the default (not found) responder using a Responder instance.
+   *
+   * @param responder
+   */
   public void setDefault(Responder responder)
   {
     defaultRegistration = new ResponderRegistration(null, responder);
+  }
+
+  /**
+   * Used in the event that an error occurs during processing.  Default: ErrorResponder
+   */
+  private Registration errorRegistration = new ResponderRegistration(null, new BuiltinErrorResponder());
+
+  /**
+   * Set the error responder using a Responder class.
+   *
+   * @param responderClass
+   */
+  public void setError(Class responderClass)
+  {
+    errorRegistration = new ClassRegistration(null, responderClass);
+  }
+
+  /**
+   * Set the error responder using a Responder instance.
+   *
+   * @param responder
+   */
+  public void setError(Responder responder)
+  {
+    errorRegistration = new ResponderRegistration(null, responder);
   }
 
   /**
@@ -92,6 +127,18 @@ public class ResponderFactory
   {
     Registration registration = registrationFor(resource);
     return registration.getResponder();
+  }
+
+  public ErrorResponder getErrorResponder()
+  {
+    try
+    {
+      return (ErrorResponder)errorRegistration.getResponder();
+    }
+    catch(Exception e)
+    {
+      return new BuiltinErrorResponder();
+    }
   }
 
   private abstract static class Registration

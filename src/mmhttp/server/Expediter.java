@@ -170,7 +170,7 @@ public class Expediter implements ResponseSender
 		}
 		catch(Exception e)
 		{
-			response = new ErrorResponder(e).makeResponse(server, request);
+			response = new BuiltinErrorResponder(e).makeResponse(server, request);
 		}
 		return response;
 	}
@@ -201,7 +201,7 @@ public class Expediter implements ResponseSender
 		{
 			Thread.sleep(10);
 			if(timeIsUp(now) && parsingIsUnproductive(request))
-					reportError(408, "The client request has been unproductive for too long.  It has timed out and will now longer be processed");
+					reportError(408, new Exception("The client request has been unproductive for too long.  It has timed out and will now longer be processed"));
 		}
 	}
 
@@ -241,7 +241,7 @@ public class Expediter implements ResponseSender
         }
         catch(HttpException e)
         {
-          reportError(400, e.getMessage());
+          reportError(400, e);
         }
         catch(Exception e)
         {
@@ -251,11 +251,11 @@ public class Expediter implements ResponseSender
     };
 	}
 
-	private void reportError(int status, String message)
+	private void reportError(int status, Exception error)
 	{
 		try
 		{
-			response = new ErrorResponder(message).makeResponse(server, request);
+      response = server.responderFactory.getErrorResponder().makeResponse(server, request, error);
 			response.setStatus(status);
 			hasError = true;
 		}
@@ -269,7 +269,7 @@ public class Expediter implements ResponseSender
 	{
 		try
 		{
-			response = new ErrorResponder(e).makeResponse(server, request);
+			response = server.responderFactory.getErrorResponder().makeResponse(server, request, e);
 			hasError = true;
 		}
 		catch(Exception e1)
