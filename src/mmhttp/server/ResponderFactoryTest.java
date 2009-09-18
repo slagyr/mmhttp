@@ -22,13 +22,13 @@ public class ResponderFactoryTest extends Assert
   {
     factory.register("/test.*", MockResponder.class);
 
-    assertEquals(MockResponder.class, factory.responderClassFor("/test/blah"));
+    assertEquals(MockResponder.class, factory.responderFor("/test/blah").getClass());
   }
 
   @Test
   public void shouldNotFoundResponder() throws Exception
   {
-    assertEquals(NotFoundResponder.class, factory.responderClassFor("blah"));   
+    assertEquals(NotFoundResponder.class, factory.responderFor("blah").getClass());
   }
 
   @Test

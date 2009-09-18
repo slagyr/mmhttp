@@ -8,7 +8,6 @@ import mmsocketserver.SocketServer;
 
 import java.net.Socket;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 /**
  * This is where the action begins.  The Server implements the SocketService.  Imagine a restaurant.  A restaurant
@@ -82,13 +81,27 @@ public class Server implements SocketServer
     responderFactory.register(pattern, klass);
   }
 
+  public void register(String pattern, Responder responder)
+  {
+    responderFactory.register(pattern, responder);
+  }
+
   /**
    * Sets the default Responder.
    * @param klass
    */
   public void setDefaultResponder(Class klass)
   {
-    responderFactory.defaultResponder = klass;
+    responderFactory.setDefault(klass);
+  }
+
+  /**
+   * Sets the default Responder.
+   * @param responder
+   */
+  public void setDefaultResponder(Responder responder)
+  {
+    responderFactory.setDefault(responder);
   }
 
   /**
