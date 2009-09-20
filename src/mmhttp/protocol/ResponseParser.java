@@ -147,6 +147,15 @@ public class ResponseParser
 	}
 
   /**
+   * Returns a hash of headers in the response.
+   * @return
+   */
+  public HashMap<String, String> getHeaders()
+  {
+    return headers;
+  }
+
+  /**
    * @return a human readable representation of the response.
    */
 	public String toString()

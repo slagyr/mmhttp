@@ -62,16 +62,7 @@
       <file leaf-file-name="Server.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="51" selection-start="3509" selection-end="3509" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SampleMain.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SampleMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="9" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
+            <state line="156" column="16" selection-start="3912" selection-end="3912" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,63 +71,52 @@
       <file leaf-file-name="Expediter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Expediter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="272" column="72" selection-start="6243" selection-end="6243" vertical-scroll-proportion="7.07483">
+            <state line="57" column="13" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.051391862">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResponderFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/ResponderFactory.java">
+      <file leaf-file-name="Request.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/Request.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="12" selection-start="3842" selection-end="3842" vertical-scroll-proportion="0.0">
+            <state line="74" column="60" selection-start="2427" selection-end="2427" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BuiltinErrorResponder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/BuiltinErrorResponder.java">
+      <file leaf-file-name="RequestBuilder.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/RequestBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="71" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0">
+            <state line="96" column="3" selection-start="2289" selection-end="2289" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ErrorResponder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/ErrorResponder.java">
+      <file leaf-file-name="ResponseParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/ResponseParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="86" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuiltinErrorResponderTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/BuiltinErrorResponderTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="66" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.0">
+            <state line="143" column="47" selection-start="3067" selection-end="3067" vertical-scroll-proportion="-0.03846154">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Responder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Responder.java">
+      <file leaf-file-name="SampleMain.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SampleMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="73" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.0">
+            <state line="3" column="13" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StringUtil.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mmhttp/util/StringUtil.java">
+      <file leaf-file-name="SimpleResponse.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/SimpleResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="991" selection-end="991" vertical-scroll-proportion="0.0">
+            <state line="51" column="14" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -261,6 +241,32 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="server" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="javahttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="javahttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="mmhttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="mmhttp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="protocol" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -514,8 +520,9 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.110711716" sideWeight="0.6671105" order="4" side_tool="false" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.110711716" sideWeight="0.66311586" order="4" side_tool="false" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45406124" sideWeight="0.5" order="8" side_tool="false" />
+      <window_info id="IntelliJad Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" sideWeight="0.5" order="9" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39946738" sideWeight="0.5" order="12" side_tool="false" />
       <window_info id="Dataflow to this" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" />
@@ -535,7 +542,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="13" side_tool="false" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
-      <window_info id="IntelliJad Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32921028" sideWeight="0.5" order="9" side_tool="false" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" />
     </layout>
@@ -581,69 +587,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Authenticator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="78" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/UnauthorizedResponder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="99" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/SimpleResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="19" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/util/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="991" selection-end="991" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.rdoc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="70" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/ResponderFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="88" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="108" selection-start="685" selection-end="685" vertical-scroll-proportion="-10.736842">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="51" selection-start="3509" selection-end="3509" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Responder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="73" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.0">
@@ -658,12 +601,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/ResponderFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="28" selection-start="2042" selection-end="2042" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/InputStreamResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/mmhttp/server/ErrorResponder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="86" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0">
+        <state line="5" column="49" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SampleMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="13" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -674,23 +638,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/ResponderFactory.java">
+    <entry file="jar://$PROJECT_DIR$/lib/mmsocketserver-1.1.jar!/mmsocketserver/MockSocket.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="12" selection-start="3842" selection-end="3842" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SampleMain.java">
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/Request.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
+        <state line="74" column="60" selection-start="2427" selection-end="2427" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/src.jar!/src/java/net/SocketException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="16" selection-start="3912" selection-end="3912" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="38" selection-start="2469" selection-end="2477" vertical-scroll-proportion="-2.7692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/SimpleResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="14" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/ResponseParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="47" selection-start="3067" selection-end="3067" vertical-scroll-proportion="-0.03846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mmhttp/protocol/RequestBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="3" selection-start="2289" selection-end="2289" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mmhttp/server/Expediter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="272" column="72" selection-start="6243" selection-end="6243" vertical-scroll-proportion="7.07483">
+        <state line="57" column="13" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.051391862">
           <folding />
         </state>
       </provider>

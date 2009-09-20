@@ -101,6 +101,7 @@ public class RequestBuilder
 		sendHeaders(output);
 		output.write(ENDL);
 		sendBody(output);
+    output.flush();
 	}
 
 	private void sendHeaders(OutputStream output) throws Exception

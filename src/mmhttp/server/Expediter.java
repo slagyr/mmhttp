@@ -161,6 +161,7 @@ public class Expediter implements ResponseSender
 			parseThread.start();
 
 			waitForRequest(request);
+
 			if(!hasError)
 				response = createGoodResponse(request);
 		}

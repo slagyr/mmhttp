@@ -66,7 +66,7 @@ public class ResponderFactory
    *
    * @param responder
    */
-  public void setError(Responder responder)
+  public void setError(ErrorResponder responder)
   {
     errorRegistration = new ResponderRegistration(null, responder);
   }

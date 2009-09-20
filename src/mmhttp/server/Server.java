@@ -105,6 +105,24 @@ public class Server implements SocketServer
   }
 
   /**
+   * Sets the error Responder.
+   * @param klass
+   */
+  public void setErrorResponder(Class klass)
+  {
+    responderFactory.setError(klass);
+  }
+
+  /**
+   * Sets the error Responder.
+   * @param responder
+   */
+  public void setErrorResponder(ErrorResponder responder)
+  {
+    responderFactory.setError(responder);
+  }
+
+  /**
    * Starts the server.
    * @throws Exception
    */

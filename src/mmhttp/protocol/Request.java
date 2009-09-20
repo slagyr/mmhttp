@@ -266,6 +266,16 @@ public class Request
 	}
 
   /**
+   * Return the hash of inputs included in the query string or multipart data of the request.
+   *
+   * @return inputs
+   */
+  public HashMap<String, Object> getInputs()
+  {
+    return inputs;
+  }
+
+  /**
    * @param key
    * @return true if the header was included in the request
    */
@@ -283,6 +293,16 @@ public class Request
 	{
 		return headers.get(key.toLowerCase());
 	}
+
+  /**
+   * Returns a hash of all the headers in the request.
+   *
+   * @return headers
+   */
+  public HashMap<String, String> getHeaders()
+  {
+    return headers;
+  }
 
   /**
    * @return the entity body of the request.
