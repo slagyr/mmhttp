@@ -3,17 +3,16 @@
 
 package mmhttp.server;
 
-import mmhttp.protocol.ResponseParser;
+import junit.framework.TestCase;
 import mmhttp.protocol.MockRequest;
-import mmhttp.protocol.Response;
 import mmhttp.protocol.Request;
+import mmhttp.protocol.Response;
+import mmhttp.protocol.ResponseParser;
+import mmsocketserver.MockSocket;
 
+import java.io.IOException;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
-import java.io.IOException;
-
-import mmsocketserver.MockSocket;
-import junit.framework.TestCase;
 
 public class ExpediterTest extends TestCase
 {
@@ -27,9 +26,23 @@ public class ExpediterTest extends TestCase
   public void setUp() throws Exception
 	{
 		socket = new MockSocket();
+		socket.setHost("");
 		server = new Server();
 		server.responderFactory.register("root", MockResponder.class);
 		expediter = new Expediter(socket, server);
+	}
+
+	public void testSetsRemoteAddressOfRequest() throws Exception
+	{
+		Request request = expediter.makeRequest();
+		assertEquals("127.0.0.1", request.getRemoteAddress());
+	}
+
+	public void testSetsRemoteHostNameOnRequest() throws Exception
+	{
+		Request request = expediter.makeRequest();
+		assertEquals("localhost", request.getRemoteHostName());
+		assertNotNull(request.getRemoteHostName());
 	}
 
 	public void testAuthenticationGetsCalled() throws Exception
@@ -77,6 +90,7 @@ public class ExpediterTest extends TestCase
 		clientInput = new PipedInputStream();
 		PipedOutputStream socketOutput = new PipedOutputStream(clientInput);
 		MockSocket socket = new MockSocket(socketInput, socketOutput);
+		socket.setHost("");
 		final Expediter sender = new Expediter(socket, server);
 		sender.requestParsingTimeLimit = 200;
 		return sender;

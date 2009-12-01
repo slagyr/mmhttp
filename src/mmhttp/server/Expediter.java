@@ -3,17 +3,18 @@
 
 package mmhttp.server;
 
-import mmhttp.protocol.ResponseSender;
+import mmhttp.protocol.HttpException;
 import mmhttp.protocol.Request;
 import mmhttp.protocol.Response;
-import mmhttp.protocol.HttpException;
+import mmhttp.protocol.ResponseSender;
 
-import java.net.Socket;
-import java.net.SocketException;
-import java.net.InetSocketAddress;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.IOException;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketException;
 import java.util.GregorianCalendar;
 
 /**
@@ -141,6 +142,11 @@ public class Expediter implements ResponseSender
 	public Request makeRequest() throws Exception
 	{
 		request = new Request(input);
+
+		InetAddress remoteAddress = ((InetSocketAddress) socket.getRemoteSocketAddress()).getAddress();
+		request.setRemoteAddress(remoteAddress.getHostAddress());
+		request.setRemoteHostName(remoteAddress.getHostName());
+
 		return request;
 	}
 

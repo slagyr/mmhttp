@@ -39,8 +39,12 @@ public class Request
 	protected String requestLine;
 	protected String authorizationUsername;
 	protected String authorizationPassword;
+	protected String remoteAddress;
+	protected String remoteHostName;
+	protected String remoteInetAddressHostName;
 	private boolean hasBeenParsed;
 	private long bytesParsed = 0;
+
 
 	private static Set buildAllowedMethodList()
 	{
@@ -453,5 +457,25 @@ public class Request
 	public long numberOfBytesParsed()
 	{
 		return bytesParsed + input.numberOfBytesConsumed();
+	}
+
+	public void setRemoteAddress(String remoteAddress)
+	{
+		this.remoteAddress = remoteAddress;
+	}
+
+	public String getRemoteAddress()
+	{
+		return remoteAddress;
+	}
+
+	public String getRemoteHostName()
+	{
+		return remoteHostName;
+	}
+
+	public void setRemoteHostName(String remoteHostName)
+	{
+		this.remoteHostName = remoteHostName;
 	}
 }

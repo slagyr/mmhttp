@@ -440,4 +440,22 @@ public class RequestTest extends TestCase
 	{
 		parseThread.join();
 	}
+
+	public void testRemoteAddress()
+	{
+		assertEquals(null, request.getRemoteAddress());
+
+		request.setRemoteAddress("1.2.3.4");
+
+		assertEquals("1.2.3.4", request.getRemoteAddress());
+	}
+
+	public void testRemoteHostName()
+	{
+		assertEquals(null, request.getRemoteHostName());
+
+		request.setRemoteHostName("TEST_COMPUTER");
+
+		assertEquals("TEST_COMPUTER", request.getRemoteHostName());
+	}
 }

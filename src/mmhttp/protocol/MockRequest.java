@@ -17,6 +17,11 @@ public class MockRequest extends Request
 		resource = "";
 	}
 
+	public void setRemoteAddress(String value)
+	{
+		remoteAddress = value;
+	}
+
 	public void setRequestUri(String value)
 	{
 		requestURI = value;
